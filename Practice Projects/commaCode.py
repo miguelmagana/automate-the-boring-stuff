@@ -1,10 +1,15 @@
 # Write a function that takes a list value as an argument
 # Returns a string with all the items separated by comma and a space, with 'and' inserted before the last item
+# Used stackoverflow for help
 
-spam = ['apples', 'bananas', 'grapes', 'frogs']
+from ntpath import join
 
-def separatorFunction(spam): # The function taking a list
-    for i in range(len(spam)): # The loop to iterate through the list
-        print(str(i[0]) + ', ' + str(i[1]) + ', ' + str(i[2]) + ', and ' + str(i[3]))
 
-separatorFunction(spam)
+def list_thing(words):
+    if len(words) == 1:
+        return words[0]
+    return '{}, and {}'.format(', '.join(words[:-1]), words[-1])
+
+spam = ['apples', 'bananas', 'tofu', 'cats']
+
+print(list_thing(spam))
